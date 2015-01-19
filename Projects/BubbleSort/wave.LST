@@ -1,0 +1,39 @@
+C51 COMPILER V8.18   WAVE                                                                  08/06/2013 14:40:21 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE WAVE
+OBJECT MODULE PLACED IN wave.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE wave.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGx51.h> //header file for 89C51
+   2          void main(){
+   3   1      //main function starts
+   4   1      unsigned int i;
+   5   1      //Initializing Port1 pin1
+   6   1      P1_1 = 0; //Make Pin1 o/p
+   7   1      while(1){
+   8   2      //Infinite loop main application
+   9   2      //comes here
+  10   2      for(i=0;i<1000;i++)
+  11   2      ; //delay loop
+  12   2      P1_1 = ~P1_1;
+  13   2      //complement Port1.1
+  14   2      //this will blink LED connected on Port1.1
+  15   2      }
+  16   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     20    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

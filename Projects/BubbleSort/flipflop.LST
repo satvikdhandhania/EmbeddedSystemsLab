@@ -1,0 +1,47 @@
+C51 COMPILER V8.05a   FLIPFLOP                                                             08/13/2013 15:09:43 PAGE 1   
+
+
+C51 COMPILER V8.05a, COMPILATION OF MODULE FLIPFLOP
+OBJECT MODULE PLACED IN flipflop.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE flipflop.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <at89c51xd2.h>
+   2          sbit CLKL = P1^0; //Clock Line (>CLK)of 8-bit shift reg U5 (Serial In Parralel Out)
+   3          sbit LED = P1^3; //Data Line of the 8-bit shift reg U5
+   4          unsigned int j;
+   5          void main()
+   6          {
+   7   1      //clear all leds
+   8   1      CLKL = 0; //clear clock input intially
+   9   1      LED = 1; //set data input as 1
+  10   1      for(j=0;j<8;j++) //apply 8 clock pulses
+  11   1      {
+  12   2      CLKL = 1;
+  13   2      CLKL =0;
+  14   2      }
+  15   1      //set all leds
+  16   1      CLKL = 0; //clear clock input initially
+  17   1      LED = 0; //set data input as 0
+  18   1      //apply 8 clock pulses
+  19   1      for(j=0;j<8;j++)
+  20   1      {
+  21   2      CLKL = 1;
+  22   2      CLKL =0;
+  23   2      }
+  24   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     55    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,55 @@
+C51 COMPILER V8.18   PARALLEL2SERIAL                                                       07/23/2013 16:47:23 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE PARALLEL2SERIAL
+OBJECT MODULE PLACED IN parallel2serial.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE parallel2serial.C BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <at89c51xd2.h>
+   2          sbit D0=P1^0;
+   3          sbit D1=P1^1 ;
+   4          sbit D2=P1^2  ;
+   5          sbit D3=P1^3   ;
+   6          sbit D4=P1^4    ;
+   7          sbit D5=P1^5    ;
+   8          sbit D6=P1^6     ;
+   9          sbit D7=P1^7      ;
+  10          sbit D9=P0^0       ;
+  11          sbit D10=P2^0;
+  12          unsigned char  ip=0xff;
+  13          p1=0xff;
+  14          void main()
+  15          {
+  16   1         int i;
+  17   1         for(i=0;i<8;i++)
+  18   1         {
+  19   2                 D10=1;
+  20   2                 D9=D0;
+  21   2                 D0=D1;
+  22   2                 D1=D2;
+  23   2                 D2=D3;
+  24   2                 D3=D4;
+  25   2                 D4=D5;
+  26   2                 D5=D6;
+  27   2                 D6=D7;
+  28   2             while(D10); 
+  29   2      
+  30   2         }
+  31   1      
+  32   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     52    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

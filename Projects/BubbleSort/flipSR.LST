@@ -1,0 +1,64 @@
+C51 COMPILER V8.05a   FLIPSR                                                               08/13/2013 16:35:58 PAGE 1   
+
+
+C51 COMPILER V8.05a, COMPILATION OF MODULE FLIPSR
+OBJECT MODULE PLACED IN flipSR.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE flipSR.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <at89c51xd2.h>
+   2          sbit CLKL = P1^0; //Clock Line (>CLK)of 8-bit shift reg U5 (Serial In Parralel Out)
+   3          sbit LED = P1^3; //Data Line of the 8-bit shift reg U5
+   4          unsigned int i,j;
+   5          void delay()
+   6          {
+   7   1        TF0=0;
+   8   1        ET0=0;
+   9   1        TMOD=0X01;
+  10   1        TL0=0xAF;
+  11   1        TH0=0X3C;
+  12   1        TR0=1;
+  13   1        while(TF0==0){}
+  14   1        TR0=0;
+  15   1      }
+  16          void main()
+  17          {
+  18   1      //while(1)      //clear all leds
+  19   1      {
+  20   2      CLKL = 0; //clear clock input intially
+  21   2      LED = 1; //set data input as 1
+  22   2              for(j=0;j<8;j++) //apply 8 clock pulses
+  23   2              {
+  24   3                      CLKL = 1;
+  25   3                      CLKL =0;
+  26   3                      for(i=0;i<20;i++)//delay for 1 sec delay generates 50ms delay therefore 20x50ms=1sec
+  27   3                       delay();
+  28   3              }
+  29   2      //set all leds
+  30   2      CLKL = 0; //clear clock input initially
+  31   2      LED = 0; //set data input as 0
+  32   2      //apply 8 clock pulses
+  33   2              for(j=0;j<8;j++)
+  34   2              {
+  35   3                      CLKL = 1;
+  36   3                      CLKL =0;
+  37   3                      for(i=0;i<20;i++)//delay for 1 sec delay generates 50ms delay therefore 20x50ms=1sec
+  38   3                       delay();
+  39   3              }
+  40   2       }
+  41   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    132    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

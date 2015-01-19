@@ -1,0 +1,4 @@
+"STARTUP.obj",
+".\vendingmachine.obj" 
+TO "demo" 
+RAMSIZE(256) 

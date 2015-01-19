@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"flipSR.obj" 
+TO "bubble" 
+RAMSIZE(256) 

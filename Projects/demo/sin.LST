@@ -1,0 +1,46 @@
+C51 COMPILER V8.05a   SIN                                                                  08/20/2013 15:55:55 PAGE 1   
+
+
+C51 COMPILER V8.05a, COMPILATION OF MODULE SIN
+OBJECT MODULE PLACED IN sin.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE sin.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <at89c51xd2.h>
+   2          #include<math.h>
+   3          void main()
+   4          { 
+   5   1        float i,a;
+   6   1        while(1)
+   7   1        {
+   8   2          for(i=0.0;i<3.14;)
+   9   2              {  
+  10   3                 a=sin(i);
+  11   3                 i=i+0.1;
+  12   3                
+  13   3               }
+  14   2          for(i=3.14;i<6.28;)
+  15   2               { 
+  16   3                 a=sin(i); 
+  17   3                 
+  18   3                 i=i+0.1;
+  19   3                
+  20   3               }
+  21   2              
+  22   2        }
+  23   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    159    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

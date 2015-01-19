@@ -1,0 +1,43 @@
+C51 COMPILER V8.05a   BUBBLE                                                               08/13/2013 16:21:37 PAGE 1   
+
+
+C51 COMPILER V8.05a, COMPILATION OF MODULE BUBBLE
+OBJECT MODULE PLACED IN bubble.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE bubble.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <at89c51xd2.h>
+   2          void main()
+   3          {
+   4   1        int a[5]={04,03,05,02,01};
+   5   1        int i,j,temp,k;
+   6   1        P0=0x00;
+   7   1        for(i=0;i<5;i++)
+   8   1        {
+   9   2              for(j=0;j<4;j++)
+  10   2              {
+  11   3                if(a[j]>a[j+1])
+  12   3                 {
+  13   4                        temp=a[j];
+  14   4                        a[j]=a[j+1];
+  15   4                        a[j+1]=temp;
+  16   4                 }
+  17   3                      for(k=0;k<32000;k++);
+  18   3              }                 
+  19   2        }
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    142    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      12
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

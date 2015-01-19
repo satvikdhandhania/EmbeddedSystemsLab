@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"parallel2serial.obj" 
+TO "parallel2serial" 
+RAMSIZE(256) 
